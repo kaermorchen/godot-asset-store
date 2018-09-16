@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'assetstore',
+    podModulePrefix: 'assetstore/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
