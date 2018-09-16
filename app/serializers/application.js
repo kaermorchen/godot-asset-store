@@ -1,4 +1,6 @@
 import DS from 'ember-data';
+import { pluralize } from 'ember-inflector';
+import { underscore } from '@ember/string';
 
 export default DS.RESTSerializer.extend({
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
@@ -10,5 +12,9 @@ export default DS.RESTSerializer.extend({
     result.meta = payload;
 
     return this._super(store, primaryModelClass, result, id, requestType);
+  },
+
+  keyForAttribute(key, method) {
+    return underscore(key);
   },
 });

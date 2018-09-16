@@ -1,1 +1,7 @@
-{{outlet}}
+<div class="row">
+  {{#each model as |asset|}}
+    <div class="col-6 mb-3">
+      {{asset-preview asset=asset}}
+    </div>
+  {{/each}}
+</div>

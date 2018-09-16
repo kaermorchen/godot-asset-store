@@ -12,7 +12,6 @@ export default DS.Model.extend({
   version: attr('string'),
   versionString: attr('string'),
   modifyDate: attr('string'),
-
-  author: belongsTo('user'),
-  category: belongsTo('category'),
+  category: attr('string'),
+  author: attr('string'),
 });
