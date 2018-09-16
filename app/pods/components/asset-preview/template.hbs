@@ -1,10 +1,35 @@
-<img class="mr-3" src={{asset.iconUrl}} alt={{asset.title}} width="80" height="80">
-<div class="media-body">
-  <h5 class="mt-0">{{asset.title}} <small>{{asset.versionString}}</small></h5>
-  <span class="badge badge-primary">{{asset.category}}</span>
-  <span class="badge badge-danger">{{asset.godotVersion}}</span>
-  <span class="badge badge-info">{{asset.supportLevel}}</span>
-  <p class="text-muted">
-    Submitted by user {{asset.author}}; {{asset.cost}}; {{asset.modifyDate}}
-  </p>
+<div class="card-body">
+  <div class="row">
+    <div class="col-auto pr-0">
+      <img src={{asset.iconUrl}} alt={{asset.title}} width="100" height="100">
+    </div>
+    <div class="col">
+      <div class="row align-items-start">
+        <div class="col pr-0">
+          <h5 class="my-0">{{asset.title}}</h5>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+          <strong class="d-inline-flex align-items-center text-warning mr-3">{{mdi-icon "star" size=20 class="mr-1"}} {{asset.rating}}</strong>
+          <strong class="d-inline-flex align-items-center"><img src="/assets/godot.svg" alt="Godot" height="16" class="mr-1"> {{asset.godotVersion}}</strong>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col text-muted">
+          by: {{asset.author}}
+        </div>
+        <div class="col-auto">
+          <strong>{{asset.cost}}</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          {{mdi-icon "checkbox-blank-circle" size=14 class="fill-primary mr-1"}}
+          <span class="mr-2">{{capitalize asset.supportLevel}}</span>
+
+          {{mdi-icon "checkbox-blank-circle" size=14 class="fill-info mr-1"}}
+          <span class="mr-2">{{capitalize asset.category}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,11 @@
-@import "custom";
-
+// Settings
 @import "ember-cli-bootstrap-4/functions";
 @import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
+@import "custom";
+
+// Bootstrap
+
 @import "ember-cli-bootstrap-4/root";
 @import "ember-cli-bootstrap-4/reboot";
 @import "ember-cli-bootstrap-4/type";
@@ -19,14 +22,14 @@
 // @import "ember-cli-bootstrap-4/custom-forms";
 // @import "ember-cli-bootstrap-4/nav";
 @import "ember-cli-bootstrap-4/navbar";
-// @import "ember-cli-bootstrap-4/card";
+@import "ember-cli-bootstrap-4/card";
 // @import "ember-cli-bootstrap-4/breadcrumb";
 @import "ember-cli-bootstrap-4/pagination";
-@import "ember-cli-bootstrap-4/badge";
+// @import "ember-cli-bootstrap-4/badge";
 // @import "ember-cli-bootstrap-4/jumbotron";
 // @import "ember-cli-bootstrap-4/alert";
 // @import "ember-cli-bootstrap-4/progress";
-@import "ember-cli-bootstrap-4/media";
+// @import "ember-cli-bootstrap-4/media";
 // @import "ember-cli-bootstrap-4/list-group";
 // @import "ember-cli-bootstrap-4/close";
 // @import "ember-cli-bootstrap-4/modal";
@@ -35,3 +38,19 @@
 // @import "ember-cli-bootstrap-4/carousel";
 @import "ember-cli-bootstrap-4/utilities";
 // @import "ember-cli-bootstrap-4/print";
+
+// Addons
+@import "ember-mdi";
+
+// Helpers
+.fill-primary {
+  fill: $primary;
+}
+
+.fill-info {
+  fill: $info;
+}
+
+.fill-warning {
+  fill: $warning;
+}
