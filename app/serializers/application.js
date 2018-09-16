@@ -1,15 +1,14 @@
 import DS from 'ember-data';
-import { pluralize } from 'ember-inflector';
 
-export default DS.JSONAPISerializer.extend({
-  normalize(typeClass, hash) {
+export default DS.RESTSerializer.extend({
+  normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
     const result = {};
 
-    result[pluralize(typeClass.modelName)] = hash.result;
-    delete hash.result;
+    result[pluralize(primaryModelClass.modelName)] = payload.result;
+    delete payload.result;
 
-    result.meta = hash;
+    result.meta = payload;
 
-    return result;
+    return this._super(store, primaryModelClass, result, id, requestType);
   },
 });
