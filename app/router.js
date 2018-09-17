@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('asset');
+  this.route('assets');
 });
 
 export default Router;
