@@ -2,8 +2,8 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'assetstore',
-    podModulePrefix: 'assetstore/pods',
+    modulePrefix: 'godot-asset-store',
+    podModulePrefix: 'godot-asset-store/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

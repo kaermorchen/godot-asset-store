@@ -1,8 +1,8 @@
 {
-  "name": "assetstore",
+  "name": "godot-asset-store",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for assetstore goes here",
+  "description": "Small description for godot-asset-store goes here",
   "repository": "",
   "license": "MIT",
   "author": "",
