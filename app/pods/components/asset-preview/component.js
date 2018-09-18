@@ -1,7 +1,3 @@
 import Component from '@ember/component';
 
-export default Component.extend({
-  classNames: ['card'],
-
-  asset: null,
-});
+export default Component.extend();

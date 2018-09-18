@@ -1,0 +1,33 @@
+<div class="border bg-white rounded">
+  <div class="p-3">
+    {{asset-preview asset=model class="mb-3"}}
+
+    {{#if model.description}}
+      <p>{{model.description}}</p>
+    {{/if}}
+
+    <div class="row">
+      <div class="col">
+        <a href={{model.downloadUrl}} class="btn btn-primary">Download</a>
+        <a href={{model.browseUrl}} class="btn btn-outline-secondary">View files</a>
+      </div>
+      <div class="col text-right">
+        <a href={{model.issuesUrl}} class="btn btn-link text-danger">Submit an issue</a>
+      </div>
+    </div>
+  </div>
+
+  {{#if model.previews.length}}
+    <div class="border-top p-3">
+      {{#each model.previews as |preview|}}
+        <img src={{preview.thumbnail}} height="170" class="mr-3 border">
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if model.downloadHash}}
+    <div class="border-top p-3 text-muted">
+      Sha256: {{model.downloadHash}}
+    </div>
+  {{/if}}
+</div>

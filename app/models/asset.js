@@ -13,4 +13,16 @@ export default DS.Model.extend({
   modifyDate: attr('string'),
   category: attr('string'),
   author: attr('string'),
+  description: attr('string'),
+  browseUrl: attr('string'),
+  downloadCommit: attr('string'),
+  downloadHash: attr('string'),
+  downloadProvider: attr('string'),
+  downloadUrl: attr('string'),
+  issuesUrl: attr('string'),
+  searchable: attr('string'),
+  type: attr('string'),
+
+  previews: attr(), //?
 });
+

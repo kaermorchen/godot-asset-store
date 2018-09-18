@@ -4,14 +4,22 @@ import { underscore } from '@ember/string';
 
 export default DS.RESTSerializer.extend({
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
-    const result = {};
+    const hash = {};
 
-    result[pluralize(primaryModelClass.modelName)] = payload.result;
+    hash[pluralize(primaryModelClass.modelName)] = payload.result;
     delete payload.result;
 
-    result.meta = payload;
+    hash.meta = payload;
 
-    return this._super(store, primaryModelClass, result, id, requestType);
+    return this._super(store, primaryModelClass, hash, id, requestType);
+  },
+
+  normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
+    const hash = {};
+
+    hash[primaryModelClass.modelName] = payload;
+
+    return this.normalizeSingleResponse(store, primaryModelClass, hash, id, requestType);
   },
 
   keyForAttribute(key) {

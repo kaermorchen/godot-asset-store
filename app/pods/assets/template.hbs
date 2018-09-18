@@ -1,7 +1,9 @@
 <div class="row">
   {{#each model as |asset|}}
     <div class="col-6 mb-3">
-      {{asset-preview asset=asset}}
+      <div class="border p-3 bg-white rounded">
+        {{asset-preview asset=asset}}
+      </div>
     </div>
   {{/each}}
 </div>
