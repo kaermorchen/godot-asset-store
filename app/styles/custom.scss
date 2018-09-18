@@ -1,11 +1,17 @@
-$beige: #eff1f5;
+$beige: #fbfbfb;
 $blue: #3d8fcc;
 $cyan: #78e5f6;
 $red: #F96854;
 $yellow: #f6c578;
 
-$card-spacer-x: map-get($spacers, 3);
+$body-bg: $beige;
+
+$box-shadow-sm: 0 0 4px rgba(0, 0, 0, .2);
+$box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+$box-shadow-lg: $box-shadow;
 
 $font-family-sans-serif: Roboto, Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;
 $headings-font-family: Montserrat;
+
+$card-spacer-x: map-get($spacers, 3);
