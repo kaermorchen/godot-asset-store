@@ -7,8 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('assets', function() {
-    this.route('asset', { path: ':asset_id' });
+  this.route('main', { path: '/' }, function() {
+    this.route('assets', function() {
+      this.route('asset', { path: ':asset_id' });
+    });
   });
 });
 
