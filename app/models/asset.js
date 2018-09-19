@@ -1,5 +1,8 @@
 import DS from 'ember-data';
 import attr from 'ember-data/attr';
+import { computed, setProperties } from '@ember/object';
+import RSVP from 'rsvp';
+import { filterBy } from '@ember/object/computed';
 
 export default DS.Model.extend({
   title: attr('string'),
@@ -22,7 +25,30 @@ export default DS.Model.extend({
   issuesUrl: attr('string'),
   searchable: attr('string'),
   type: attr('string'),
+  previews: attr(),
 
-  previews: attr(), //?
+  images: filterBy('formattedPreviews', 'type', 'image'),
+
+  formattedPreviews: computed('previews.@each.{preview_id,link,thumbnail,type}', function () {
+    const previews = this.get('previews');
+    const promise = RSVP.map(previews, preview => {
+      if (preview.type === 'image') {
+        const image = new Image();
+
+        image.onload = function () {
+          setProperties(preview, {
+            h: image.height,
+            w: image.width,
+            src: image.src
+          });
+        };
+
+        image.src = preview.link;
+      }
+
+      return preview;
+    });
+
+    return DS.PromiseArray.create({ promise });
+  })
 });
-

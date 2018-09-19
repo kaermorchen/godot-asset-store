@@ -19,9 +19,19 @@
 
   {{#if model.previews.length}}
     <div class="border-top p-3">
-      {{#each model.previews as |preview|}}
-        <img src={{preview.thumbnail}} height="170" class="mr-3 border">
-      {{/each}}
+      {{#photo-swipe items=model.images history=false as |photoswipe|}}
+        {{#each model.formattedPreviews as |preview|}}
+          {{#if (eq preview.type "image")}}
+            <img src={{preview.thumbnail}} height="170" class="mr-3 border cursor-pointer" onclick={{action "openPreview" photoswipe preview}}>
+          {{/if}}
+
+          {{#if (eq preview.type "video")}}
+            <a href={{preview.link}}>
+              <img src={{preview.thumbnail}} height="170" class="mr-3 border cursor-pointer">
+            </a>
+          {{/if}}
+        {{/each}}
+      {{/photo-swipe}}
     </div>
   {{/if}}
 
