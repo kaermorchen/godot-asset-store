@@ -1,11 +1,14 @@
 {
   "name": "godot-asset-store",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "Small description for godot-asset-store goes here",
-  "repository": "",
-  "license": "MIT",
-  "author": "",
+  "description": "Frontend godot asset store",
+  "repository": "https://github.com/kaermorchen/godot-asset-store",
+  "author": {
+    "name": "Stanislav Romanov",
+    "email": "kaermorchen@gmail.com",
+    "url": "https://stanislavromanov.ru"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"

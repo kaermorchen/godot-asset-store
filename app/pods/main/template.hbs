@@ -1,17 +1,23 @@
-<header>
-  <div class="navbar bg-white shadow-sm mb-3">
+<div class="d-flex w-100 h-100 flex-column">
+  <header class="col-auto navbar bg-white shadow-sm mb-3">
     <div class="container justify-content-start">
-      {{#link-to "index" class="navbar-brand d-flex align-items-center"}}
+      {{#link-to "main" class="navbar-brand d-flex align-items-center"}}
         <img src="/assets/godot.svg" alt="Godot Engine" height="48" class="mr-2"> Asset Store
       {{/link-to}}
 
       <nav>
-        {{link-to "Assets" "assets" class="p-2 text-dark"}}
+        {{link-to "Assets" "main.assets" class="p-2 text-dark"}}
       </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<main role="main" class="container">
-  {{outlet}}
-</main>
+  <main role="main" class="container">
+    {{outlet}}
+  </main>
+
+  <footer class="p-3 mt-auto bg-white">
+    <div class="container">
+      <a href="https://godotengine.org" title="Godot Engine">Godot Engine</a>
+    </div>
+  </footer>
+</div>

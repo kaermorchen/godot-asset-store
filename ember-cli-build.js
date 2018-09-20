@@ -11,7 +11,7 @@ module.exports = function (defaults) {
       only: ['capitalize']
     },
     'ember-mdi': {
-      icons: ['checkbox-blank-circle', 'star'],
+      icons: ['checkbox-blank-circle', 'star', 'loading'],
     }
   });
 
