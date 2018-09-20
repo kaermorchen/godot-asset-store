@@ -59,6 +59,8 @@
   cursor: pointer;
 }
 
+@include bg-variant(".bg-purple", $purple);
+
 // Common styles
 html, body {
   height: 100%;
