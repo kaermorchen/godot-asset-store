@@ -1,54 +1,41 @@
-<div class="border bg-white rounded">
-  <div class="p-3">
-    {{asset-preview asset=model class="mb-3"}}
-
-    {{#if model.description}}
-      <p>{{model.description}}</p>
-    {{/if}}
-
-    <div class="row">
-      <div class="col">
-        <a href={{model.downloadUrl}} class="btn btn-primary">Download</a>
-        <a href={{model.browseUrl}} class="btn btn-outline-secondary">View files</a>
-      </div>
-      <div class="col text-right">
-        <a href={{model.issuesUrl}} class="btn btn-link text-danger">Submit an issue</a>
-      </div>
-    </div>
-  </div>
-
+<div class="row mb-3">
   {{#if model.previews.length}}
-    <div class="border-top p-3">
-      {{#photo-swipe items=model.images history=false as |photoswipe|}}
-        {{#each model.formattedPreviews as |preview|}}
+    <div class="col-6">
+      {{#swiper-container spaceBetween=30 class="border"}}
+        {{#each model.previews as |preview|}}
           {{#if (eq preview.type "image")}}
-            <img
-              src={{preview.thumbnail}}
-              height="170"
-              class="mr-3 border cursor-pointer"
-              onclick={{action "openPreview" photoswipe preview}}
-              alt=""
-            >
-          {{/if}}
-
-          {{#if (eq preview.type "video")}}
-            <a href={{preview.link}}>
-              <img
-                src={{preview.thumbnail}}
-                height="170"
-                class="mr-3 border cursor-pointer"
-                alt=""
-              >
-            </a>
+            <div class="swiper-slide" style="background-image:url({{preview.link}})"></div>
           {{/if}}
         {{/each}}
-      {{/photo-swipe}}
+      {{/swiper-container}}
     </div>
   {{/if}}
+  <div class="col">
+    <h1>{{model.title}}</h1>
 
-  {{#if model.downloadHash}}
-    <div class="border-top p-3 text-muted">
-      Sha256: {{model.downloadHash}}
+    <div class="row mb-3">
+      <div class="col d-flex align-items-center">
+        {{mdi-icon "checkbox-blank-circle" size=14 class="fill-primary mr-1"}}
+        <span class="mr-3">{{capitalize model.supportLevel}}</span>
+
+        {{mdi-icon "checkbox-blank-circle" size=14 class="fill-info mr-1"}}
+        <span class="mr-3">{{capitalize model.category}}</span>
+
+        <img src="/assets/godot.svg" alt="Godot" height="16" class="mr-1">{{model.godotVersion}}
+      </div>
     </div>
-  {{/if}}
+
+    <div class="mb-1">author: {{model.author}}</div>
+    <div class="mb-1">version: {{model.versionString}}</div>
+    <div class="mb-3">date: {{model.modifyDate}}</div>
+
+
+    <a href={{model.downloadUrl}} class="btn btn-primary">Download</a>
+    <a href={{model.browseUrl}} class="btn btn-outline-secondary">View files</a>
+  </div>
 </div>
+
+{{#if model.description}}
+  <h2>Description</h2>
+  <p>{{filtered-text model.description}}</p>
+{{/if}}
