@@ -1,0 +1,34 @@
+{{#if labelIsShown}}
+  <label class={{leftColumnClass}}>
+    {{label}}
+  </label>
+{{/if}}
+
+<div class={{rightColumnClass}}>
+  {{#if hasBlock}}
+    {{yield publicAPI}}
+  {{else}}
+    {{input
+      type=type
+      value=value
+      disabled=disabled
+      autofocus=autofocus
+      tabindex=tabindex
+      placeholder=placeholder
+    }}
+  {{/if}}
+
+  {{#if errorIsShown}}
+    {{#if error}}
+      <div class="invalid-feedback d-block">{{error}}</div>
+    {{/if}}
+
+    {{#each errors as |error|}}
+      <div class="invalid-feedback d-block">{{if error.message error.message error}}</div>
+    {{/each}}
+  {{/if}}
+
+  {{#if formText}}
+    <small class="form-text text-muted">{{{formText}}}</small>
+  {{/if}}
+</div>

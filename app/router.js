@@ -12,6 +12,8 @@ Router.map(function() {
       this.route('asset', { path: ':asset_id' });
     });
   });
+  this.route('registration');
+  this.route('login');
 });
 
 export default Router;

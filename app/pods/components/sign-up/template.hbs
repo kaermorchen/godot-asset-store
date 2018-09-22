@@ -1,0 +1,15 @@
+<h2 class="text-center">Sign Up</h2>
+
+{{form-group label="Username" model=this property="username"}}
+{{form-group label="Email" model=this property="email"}}
+{{form-group label="Password" model=this property="password" type="password"}}
+
+<div class="row">
+  <div class="col-6">
+    <button class="btn btn-primary" onclick={{perform register}}>Register</button>
+  </div>
+  <div class="col-6 text-right">
+    {{link-to "Log in" "login" class="btn btn-link"}}
+  </div>
+</div>
+
