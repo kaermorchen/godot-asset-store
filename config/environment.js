@@ -19,12 +19,15 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      host: 'https://godotengine.org/asset-library',
+      namespace: 'api',
     }
   };
 
   if (environment === 'development') {
+    ENV.APP.host = 'http://godot-asset-library';
+    ENV.APP.namespace = 'index.php';
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
