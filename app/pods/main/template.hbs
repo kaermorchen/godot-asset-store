@@ -8,6 +8,16 @@
       <nav>
         {{link-to "Assets" "main.assets" class="p-2 text-dark"}}
       </nav>
+
+      <nav class="ml-auto">
+        {{#if session.isAuthenticated}}
+          is authenticated
+        {{else}}
+          {{#link-to "login" class="d-flex align-items-center"}}
+            Sign in {{mdi-icon "login" class="ml-1"}}
+          {{/link-to}}
+        {{/if}}
+      </nav>
     </div>
   </header>
 
