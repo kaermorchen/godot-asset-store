@@ -15,7 +15,7 @@
 @import "ember-cli-bootstrap-4/forms";
 @import "ember-cli-bootstrap-4/buttons";
 @import "ember-cli-bootstrap-4/transitions";
-// @import "ember-cli-bootstrap-4/dropdown";
+@import "ember-cli-bootstrap-4/dropdown";
 // @import "ember-cli-bootstrap-4/button-group";
 // @import "ember-cli-bootstrap-4/input-group";
 // @import "ember-cli-bootstrap-4/custom-forms";
@@ -39,6 +39,7 @@
 // @import "ember-cli-bootstrap-4/print";
 
 // Addons
+@import 'ember-basic-dropdown';
 @import "ember-mdi";
 @import "ember-photoswipe";
 @import "pod-styles";
@@ -54,6 +55,10 @@
 
 .fill-warning {
   fill: $warning;
+}
+
+.fill-border-color {
+  fill: $border-color;
 }
 
 .cursor-pointer {

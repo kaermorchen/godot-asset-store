@@ -5,19 +5,39 @@
         <img src="/assets/godot.svg" alt="Godot Engine" height="48" class="mr-2"> Asset Store
       {{/link-to}}
 
-      <nav>
-        {{link-to "Assets" "main.assets" class="p-2 text-dark"}}
-      </nav>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          {{link-to "Assets" "main.assets" class="p-2 text-dark"}}
+        </li>
+      </ul>
 
-      <nav class="ml-auto">
+      <ul class="navbar-nav ml-auto">
         {{#if session.isAuthenticated}}
-          is authenticated
+          {{#basic-dropdown
+            tagName="li"
+            class="nav-item dropdown"
+            horizontalPosition="auto-right"
+            as |dd|
+          }}
+            {{#dd.trigger class="nav-link d-flex align-items-center cursor-pointer"}}
+              {{mdi-icon "account-outline" class="mr-2 border rounded-circle fill-border-color" size=40}}
+              {{session.data.authenticated.username}}
+              {{mdi-icon "chevron-down" class="ml-1" size=14}}
+            {{/dd.trigger}}
+
+            {{#dd.content}}
+              <div class="dropdown-menu dropdown-menu-right d-block">
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button" onclick={{action "invalidateSession"}}>Logout</button>
+              </div>
+            {{/dd.content}}
+          {{/basic-dropdown}}
         {{else}}
           {{#link-to "login" class="d-flex align-items-center"}}
             Sign in {{mdi-icon "login" class="ml-1"}}
           {{/link-to}}
         {{/if}}
-      </nav>
+      </ul>
     </div>
   </header>
 
