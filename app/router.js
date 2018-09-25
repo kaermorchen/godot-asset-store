@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('main', { path: '/' }, function() {
     this.route('assets', function() {
       this.route('asset', { path: ':asset_id' });
+      this.route('new');
     });
   });
   this.route('registration');

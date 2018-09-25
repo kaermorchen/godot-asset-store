@@ -27,7 +27,7 @@
 
             {{#dd.content}}
               <div class="dropdown-menu dropdown-menu-right d-block">
-                {{link-to "My assets" "main.account.assets" class="dropdown-item" invokeAction=(action dd.actions.close)}}
+                {{link-to "Submit asset" "main.assets.new" class="dropdown-item" invokeAction=(action dd.actions.close)}}
                 <div class="dropdown-divider"></div>
                 <button class="dropdown-item" type="button" onclick={{action "invalidateSession"}}>Logout</button>
               </div>

@@ -12,6 +12,9 @@ module.exports = function (defaults) {
     },
     'ember-mdi': {
       icons: ['chevron-down', 'account-outline', 'login', 'checkbox-blank-circle', 'star', 'loading'],
+    },
+    'ember-composable-helpers': {
+      only: ['find-by']
     }
   });
 
