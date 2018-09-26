@@ -29,6 +29,7 @@ export default Component.extend({
   type: null,
   tabindex: null,
   hasBeenTouched: false,
+  labelClass: false,
 
   didInsertElement() {
     this._super(...arguments);

@@ -81,3 +81,21 @@ html, body {
     background-size: contain;
   }
 }
+
+.ember-power-select-trigger {
+  height: $input-height;
+  line-height: $input-line-height;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.ember-power-select-selected-item,
+.ember-power-select-placeholder {
+  margin-left: 0;
+}
+
+textarea {
+  min-height: 140px;
+}

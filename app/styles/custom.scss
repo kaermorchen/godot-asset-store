@@ -1,5 +1,13 @@
 $swiper-height: 300px;
 
+$enable-caret:              false;
+$enable-rounded:            false;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        false;
+$enable-print-styles:       false;
+$enable-validation-icons:   false;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -15,12 +23,31 @@ $container-max-widths: (
   xl: 1440px
 );
 
-$beige: #fbfbfb;
-$blue: #3d8fcc;
-$purple: #333f67;
-$cyan: #78e5f6;
-$red: #F96854;
-$yellow: #f6c578;
+$border-radius: 0;
+
+$white:    #fff;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000;
+
+$beige:   #fbfbfb;
+$blue:    #3d8fcc;
+$indigo:  #6610f2 !default;
+$purple:  #333f67;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #F96854;
+$yellow:  #f6c578;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #78e5f6;
 
 $body-bg: $beige;
 
@@ -31,3 +58,42 @@ $box-shadow-lg: $box-shadow;
 $font-family-sans-serif: Roboto, Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;
 $headings-font-family: Montserrat, sans-serif;
+
+$input-btn-padding-y: .25rem;
+$input-btn-padding-x: .75rem;
+
+$input-bg: $white;
+$input-disabled-bg: $gray-200;
+$input-color: $gray-700;
+
+$input-border-color: $gray-400;
+
+$border-color: $gray-300;
+$input-focus-border-color: $gray-600;
+$input-btn-focus-box-shadow: none;
+
+// Ember power select
+// Backgrounds
+$ember-power-select-background-color: $input-bg;
+$ember-power-select-disabled-background-color: $input-disabled-bg;
+$ember-power-select-multiple-selection-background-color: $input-bg;
+$ember-power-select-highlighted-background: $input-border-color;
+$ember-power-select-selected-background: $ember-power-select-highlighted-background;
+
+// Borders
+$ember-power-select-border-color: $input-border-color;
+$ember-power-select-focus-border-color: $input-focus-border-color;
+
+// Borders radius
+$ember-power-select-default-border-radius: $border-radius;
+
+// Texts
+$ember-power-select-text-color: $input-color;
+$ember-power-select-highlighted-color: $ember-power-select-text-color;
+
+// Other
+$ember-power-select-option-padding: $input-btn-padding-x;
+$ember-power-select-trigger-ltr-padding: $input-btn-padding-y $input-btn-padding-x;
+$ember-power-select-trigger-rtl-padding: $input-btn-padding-y $input-btn-padding-x;
+$ember-power-select-dropdown-box-shadow: $box-shadow;
+$ember-power-select-clear-btn-margin: 32px;

@@ -1,56 +1,60 @@
-{{form-group label="Asset Name" model=model property="title"}}
+<div class="row">
+  <div class="col-md-12 col-lg-10 col-xl-6 mx-auto">
+    {{horizontal-form-group label="Asset Name" model=model property="title"}}
 
-{{#form-group label="Description" model=model property="description"}}
-  {{textarea value=description}}
-{{/form-group}}
+    {{#horizontal-form-group label="Description" model=model property="description"}}
+      {{textarea value=description}}
+    {{/horizontal-form-group}}
 
-{{#form-group label="Category" model=model property="category"}}
-  {{#power-select
-    options=categories
-    selected=(find-by "name" model.category categories)
-    onchange=(action (mut model.category) value="name")
-    as |item|
-  }}
-    {{item.name}}
-  {{/power-select}}
-{{/form-group}}
+    {{#horizontal-form-group label="Category" model=model property="category"}}
+      {{#power-select
+        options=categories
+        selected=(find-by "name" model.category categories)
+        onchange=(action (mut model.category) value="name")
+        as |item|
+      }}
+        {{item.name}}
+      {{/power-select}}
+    {{/horizontal-form-group}}
 
-{{#form-group label="License" model=model property="cost"}}
-  {{#power-select
-    options=constants.licenses
-    selected=(find-by "value" model.cost constants.licenses)
-    onchange=(action (mut model.cost) value="value")
-    as |item|
-  }}
-    {{item.name}}
-  {{/power-select}}
-{{/form-group}}
+    {{#horizontal-form-group label="License" model=model property="cost"}}
+      {{#power-select
+        options=constants.licenses
+        selected=(find-by "value" model.cost constants.licenses)
+        onchange=(action (mut model.cost) value="value")
+        as |item|
+      }}
+        {{item.name}}
+      {{/power-select}}
+    {{/horizontal-form-group}}
 
-{{#form-group label="Repository host" model=model property="downloadProvider"}}
-  {{#power-select
-    options=constants.downloadProviders
-    selected=(find-by "name" model.downloadProvider constants.downloadProviders)
-    onchange=(action (mut model.downloadProvider) value="name")
-    as |item|
-  }}
-    {{item.name}}
-  {{/power-select}}
-{{/form-group}}
+    {{#horizontal-form-group label="Repository host" model=model property="downloadProvider"}}
+      {{#power-select
+        options=constants.downloadProviders
+        selected=(find-by "name" model.downloadProvider constants.downloadProviders)
+        onchange=(action (mut model.downloadProvider) value="name")
+        as |item|
+      }}
+        {{item.name}}
+      {{/power-select}}
+    {{/horizontal-form-group}}
 
-{{form-group label="Repository URL" model=model property="browseUrl"}}
-{{form-group label="Issues URL" model=model property="issuesUrl"}}
+    {{horizontal-form-group label="Repository URL" model=model property="browseUrl"}}
+    {{horizontal-form-group label="Issues URL" model=model property="issuesUrl"}}
 
-{{#form-group label="Godot version" model=model property="godotVersion"}}
-  {{#power-select
-    options=constants.godotVersions
-    selected=model.godotVersion
-    onchange=(action (mut model.godotVersion))
-    as |item|
-  }}
-    {{item}}
-  {{/power-select}}
-{{/form-group}}
+    {{#horizontal-form-group label="Godot version" model=model property="godotVersion"}}
+      {{#power-select
+        options=constants.godotVersions
+        selected=model.godotVersion
+        onchange=(action (mut model.godotVersion))
+        as |item|
+      }}
+        {{item}}
+      {{/power-select}}
+    {{/horizontal-form-group}}
 
-{{form-group label="Asset Version" model=model property="versionString"}}
-{{form-group label="Download Commit/tag" model=model property="downloadCommit"}}
-{{form-group label="Icon URL" model=model property="iconUrl"}}
+    {{horizontal-form-group label="Asset Version" model=model property="versionString"}}
+    {{horizontal-form-group label="Download Commit/tag" model=model property="downloadCommit"}}
+    {{horizontal-form-group label="Icon URL" model=model property="iconUrl"}}
+  </div>
+</div>
