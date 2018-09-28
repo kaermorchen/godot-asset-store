@@ -19,7 +19,7 @@
       {{/power-select}}
     {{/horizontal-form-group}}
 
-    {{#horizontal-form-group label="License" model=model property="cost"}}
+    {{#horizontal-form-group label="License" model=model property="cost" formText=licenseText}}
       {{#power-select
         options=constants.licenses
         selected=(find-by "value" model.cost constants.licenses)
@@ -30,7 +30,7 @@
       {{/power-select}}
     {{/horizontal-form-group}}
 
-    {{#horizontal-form-group label="Repository host" model=model property="downloadProvider" }}
+    {{#horizontal-form-group label="Repository host" model=model property="downloadProvider" formText=repositoryHostText}}
       {{#power-select
         options=constants.downloadProviders
         selected=(find-by "name" model.downloadProvider constants.downloadProviders)
@@ -41,8 +41,8 @@
       {{/power-select}}
     {{/horizontal-form-group}}
 
-    {{horizontal-form-group label="Repository URL" model=model property="browseUrl" placeholder="https://host.example/user/repository"}}
-    {{horizontal-form-group label="Issues URL" model=model property="issuesUrl" placeholder="https://host.example/user/repository/issues"}}
+    {{horizontal-form-group label="Repository URL" model=model property="browseUrl" placeholder="https://host.example/user/repository" formText=repositoryUrlText}}
+    {{horizontal-form-group label="Issues URL" model=model property="issuesUrl" placeholder="https://host.example/user/repository/issues" formText=issuesText}}
 
     {{#horizontal-form-group label="Godot version" model=model property="godotVersion"}}
       {{#power-select
@@ -56,7 +56,14 @@
     {{/horizontal-form-group}}
 
     {{horizontal-form-group label="Asset Version" model=model property="versionString" placeholder="e.g. 1.0.0 or 1.0"}}
-    {{horizontal-form-group label="Download Commit/tag" model=model property="downloadCommit" placeholder="Commit ID or tag"}}
+    {{horizontal-form-group label="Download Commit/tag" model=model property="downloadCommit" placeholder="Commit ID or tag" formText=downloadText}}
     {{horizontal-form-group label="Icon URL" model=model property="iconUrl" placeholder="https://host.example/user/repository/raw/icon.(png|jpg)"}}
+
+    <div class="row">
+      <div class="col offset-md-4">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
   </div>
 </div>
+
