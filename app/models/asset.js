@@ -3,8 +3,22 @@ import attr from 'ember-data/attr';
 import { computed, setProperties } from '@ember/object';
 import RSVP from 'rsvp';
 import { filterBy } from '@ember/object/computed';
+import { validator, buildValidations } from 'ember-cp-validations';
 
-export default DS.Model.extend({
+const Validations = buildValidations({
+  title: validator('presence', true),
+  description: validator('presence', true),
+  category: validator('presence', true),
+  cost: validator('presence', true),
+  downloadProvider: validator('presence', true),
+  browseUrl: validator('presence', true),
+  godotVersion: validator('presence', true),
+  versionString: validator('presence', true),
+  downloadCommit: validator('presence', true),
+  iconUrl: validator('presence', true),
+});
+
+export default DS.Model.extend(Validations, {
   title: attr('string'),
   godotVersion: attr('string'),
   rating: attr('string'),

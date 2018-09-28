@@ -22,5 +22,20 @@ export default Controller.extend({
     const promise = this.store.findAll('category');
 
     return DS.PromiseArray.create({ promise });
-  })
+  }),
+
+  actions: {
+    save() {
+      const model = this.get('model');
+
+      model.validate().then(({ validations }) => {
+        if (validations.get('isInvalid')) {
+          model.set('didValidate', true);
+          return;
+        }
+
+        // TODO: saving model and redirect
+      });
+    }
+  }
 });
