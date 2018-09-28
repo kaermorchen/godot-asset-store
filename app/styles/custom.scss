@@ -64,21 +64,27 @@ $input-btn-padding-x: .75rem;
 
 $input-bg: $white;
 $input-disabled-bg: $gray-200;
-$input-color: $gray-700;
+$input-color: $gray-900;
 
 $input-border-color: $gray-400;
 
 $border-color: $gray-300;
+$input-placeholder-color: $gray-500;
 $input-focus-border-color: $gray-600;
 $input-btn-focus-box-shadow: none;
 
 // Ember power select
+
 // Backgrounds
 $ember-power-select-background-color: $input-bg;
 $ember-power-select-disabled-background-color: $input-disabled-bg;
 $ember-power-select-multiple-selection-background-color: $input-bg;
 $ember-power-select-highlighted-background: $input-border-color;
 $ember-power-select-selected-background: $ember-power-select-highlighted-background;
+
+// Texts
+$ember-power-select-text-color: $input-color;
+$ember-power-select-placeholder-color: $input-placeholder-color;
 
 // Borders
 $ember-power-select-border-color: $input-border-color;
