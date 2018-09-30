@@ -5,6 +5,7 @@ export default Route.extend({
     filter: { refreshModel: true },
     sort: { refreshModel: true },
     godot_version: { refreshModel: true },
+    category: { refreshModel: true },
   },
 
   model(params) {

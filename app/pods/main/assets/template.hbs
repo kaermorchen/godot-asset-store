@@ -10,10 +10,23 @@
 
     {{#form-group labelIsShown=false}}
       {{#power-select
+        options=categories
+        selected=(find-by "id" category categories)
+        onchange=(action "categoryChanged")
+        placeholder="Category"
+        allowClear=true
+        as |item|
+      }}
+        {{item.name}}
+      {{/power-select}}
+    {{/form-group}}
+
+    {{#form-group labelIsShown=false}}
+      {{#power-select
         options=constants.godotVersions
         selected=godot_version
         onchange=(action (mut godot_version))
-        placeholder="Godot version..."
+        placeholder="Godot version"
         allowClear=true
         as |item|
       }}
