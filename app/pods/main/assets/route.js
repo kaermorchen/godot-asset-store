@@ -4,6 +4,7 @@ export default Route.extend({
   queryParams: {
     filter: { refreshModel: true },
     sort: { refreshModel: true },
+    godot_version: { refreshModel: true },
   },
 
   model(params) {

@@ -4,9 +4,22 @@
       {{input value=searchText placeholder="Search assets…" enter=(action "onSearch")}}
 
       <div class="input-group-append">
-        <button class="btn btn-primary cursor-pointer" onclick={{action "onSearch"}}>{{mdi-icon "magnify" size=18}}</button>
+        <button class="btn btn-primary cursor-pointer d-inline-flex align-items-center" onclick={{action "onSearch"}}>{{mdi-icon "magnify" size=18}}</button>
       </div>
     </div>
+
+    {{#form-group labelIsShown=false}}
+      {{#power-select
+        options=constants.godotVersions
+        selected=godot_version
+        onchange=(action (mut godot_version))
+        placeholder="Godot version..."
+        allowClear=true
+        as |item|
+      }}
+        Godot version: {{item}}
+      {{/power-select}}
+    {{/form-group}}
   </div>
   <div class="col-9">
     <div class="row justify-content-end mb-3">
