@@ -1,0 +1,36 @@
+.asset-preview-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: $gray-100 no-repeat center center;
+  background-size: contain;
+  border: solid $border-width $border-color;
+  border-bottom: none;
+
+
+  &:before{
+    content: " ";
+    display: block;
+    padding-top: 56.25%;
+  }
+}
+
+.asset-preview-info {
+  padding: map-get($spacers, 3);
+
+  background: $white;
+  border: solid $border-width $border-color;
+  border-top: none;
+
+  h3 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+
+    a {
+      color: $body-color;
+    }
+  }
+}

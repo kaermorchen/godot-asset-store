@@ -2,6 +2,8 @@ import LinkComponent from '@ember/routing/link-component';
 
 export function initialize() {
   LinkComponent.reopen({
+    attributeBindings: ['style'],
+
     invokeAction() { },
 
     init() {
