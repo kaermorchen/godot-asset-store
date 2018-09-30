@@ -17,7 +17,7 @@
 @import "ember-cli-bootstrap-4/transitions";
 @import "ember-cli-bootstrap-4/dropdown";
 // @import "ember-cli-bootstrap-4/button-group";
-// @import "ember-cli-bootstrap-4/input-group";
+@import "ember-cli-bootstrap-4/input-group";
 // @import "ember-cli-bootstrap-4/custom-forms";
 // @import "ember-cli-bootstrap-4/nav";
 @import "ember-cli-bootstrap-4/navbar";
@@ -92,6 +92,8 @@ html, body {
 .ember-power-select-trigger {
   height: $input-height;
   line-height: $input-line-height;
+  min-width: 120px;
+  padding-right: 18px;
 
   &:focus {
     outline: 0;

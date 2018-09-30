@@ -1,7 +1,18 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model() {
-    return this.get('store').findAll('asset');
+  queryParams: {
+    filter: { refreshModel: true },
+    sort: { refreshModel: true },
+  },
+
+  model(params) {
+    return this.get('store').query('asset', params);
+  },
+
+  setupController(controller) {
+    this._super(...arguments);
+
+    controller.set('searchText', controller.filter);
   }
 });

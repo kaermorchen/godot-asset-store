@@ -11,7 +11,7 @@ module.exports = function (defaults) {
       only: ['capitalize']
     },
     'ember-mdi': {
-      icons: ['chevron-down', 'account-outline', 'login', 'checkbox-blank-circle', 'star', 'loading'],
+      icons: ['magnify', 'chevron-down', 'account-outline', 'login', 'checkbox-blank-circle', 'star', 'loading'],
     },
     'ember-composable-helpers': {
       only: ['find-by']

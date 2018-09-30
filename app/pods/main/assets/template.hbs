@@ -1,5 +1,32 @@
 <div class="row">
-  {{#each model as |asset|}}
-    {{asset-preview asset=asset class="col-md-4 col-lg-3 col-xl-2 mb-4"}}
-  {{/each}}
+  <div class="col-3">
+    <div class="input-group mb-3">
+      {{input value=searchText placeholder="Search assets…" enter=(action "onSearch")}}
+
+      <div class="input-group-append">
+        <button class="btn btn-primary cursor-pointer" onclick={{action "onSearch"}}>{{mdi-icon "magnify" size=18}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="row justify-content-end mb-3">
+      <div class="col-auto">
+        {{#power-select
+          options=sortOptions
+          selected=sort
+          onchange=(action (mut sort))
+          as |item|
+        }}
+          {{item}}
+        {{/power-select}}
+      </div>
+    </div>
+    <div class="row">
+      {{#each model as |asset|}}
+        {{asset-preview asset=asset class="col-md-4 col-lg-3 col-xl-2 mb-4"}}
+      {{/each}}
+    </div>
+  </div>
 </div>
+
+
