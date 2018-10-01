@@ -37,14 +37,28 @@
   <div class="col-9">
     <div class="row justify-content-end mb-3">
       <div class="col-auto">
-        {{#power-select
-          options=sortOptions
-          selected=sort
-          onchange=(action (mut sort))
-          as |item|
-        }}
-          {{item}}
-        {{/power-select}}
+        <div class="form-inline">
+          <label class="mr-1">Order by</label>
+          {{#power-select
+            options=sortOptions
+            selected=sort
+            onchange=(action (mut sort))
+            triggerClass="mr-3"
+            as |item|
+          }}
+            {{item}}
+          {{/power-select}}
+
+          <label class="mr-1">Items per page</label>
+          {{#power-select
+            options=maxResultsOptions
+            selected=max_results
+            onchange=(action (mut max_results))
+            as |item|
+          }}
+            {{item}}
+          {{/power-select}}
+        </div>
       </div>
     </div>
     <div class="row">

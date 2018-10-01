@@ -6,6 +6,7 @@ export default Route.extend({
     sort: { refreshModel: true },
     godot_version: { refreshModel: true },
     category: { refreshModel: true },
+    max_results: { refreshModel: true },
   },
 
   model(params) {

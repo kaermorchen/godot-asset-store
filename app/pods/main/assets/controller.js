@@ -14,8 +14,10 @@ export default Controller.extend({
   sort: 'updated',
   godot_version: null,
   category: null,
+  max_results: 20,
 
   sortOptions: ['rating', 'cost', 'name', 'updated'],
+  maxResultsOptions: [20, 50, 100],
 
   categories: computed(function () {
     const promise = this.store.findAll('category');
