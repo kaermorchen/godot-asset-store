@@ -1,5 +1,9 @@
 <div class="row">
-  <div class="col-3">
+  <div class="col-12 offset-md-3">
+    <h1>Assets</h1>
+  </div>
+
+  <div class="col-md-3">
     <div class="input-group mb-3">
       {{input value=searchText placeholder="Search assets…" enter=(action "onSearch")}}
 
@@ -8,12 +12,11 @@
       </div>
     </div>
 
-    {{#form-group labelIsShown=false}}
+    {{#form-group label="Category"}}
       {{#power-select
         options=categories
         selected=(find-by "id" category categories)
         onchange=(action "categoryChanged")
-        placeholder="Category"
         allowClear=true
         as |item|
       }}
@@ -21,49 +24,45 @@
       {{/power-select}}
     {{/form-group}}
 
-    {{#form-group labelIsShown=false}}
+    {{#form-group label="Godot version"}}
       {{#power-select
         options=constants.godotVersions
         selected=godot_version
         onchange=(action (mut godot_version))
-        placeholder="Godot version"
         allowClear=true
         as |item|
       }}
-        Godot version: {{item}}
+        {{item}}
+      {{/power-select}}
+    {{/form-group}}
+
+    {{#form-group label="Order by"}}
+      {{#power-select
+        options=sortOptions
+        selected=sort
+        onchange=(action (mut sort))
+        as |item|
+      }}
+        {{item}}
+      {{/power-select}}
+    {{/form-group}}
+
+    {{#form-group label="Items per page"}}
+      {{#power-select
+        options=maxResultsOptions
+        selected=max_results
+        onchange=(action (mut max_results))
+        as |item|
+      }}
+        {{item}}
       {{/power-select}}
     {{/form-group}}
   </div>
-  <div class="col-9">
-    <div class="row justify-content-end mb-3">
-      <div class="col-auto">
-        <div class="form-inline">
-          <label class="mr-1">Order by</label>
-          {{#power-select
-            options=sortOptions
-            selected=sort
-            onchange=(action (mut sort))
-            triggerClass="mr-3"
-            as |item|
-          }}
-            {{item}}
-          {{/power-select}}
 
-          <label class="mr-1">Items per page</label>
-          {{#power-select
-            options=maxResultsOptions
-            selected=max_results
-            onchange=(action (mut max_results))
-            as |item|
-          }}
-            {{item}}
-          {{/power-select}}
-        </div>
-      </div>
-    </div>
+  <div class="col-md-9">
     <div class="row">
       {{#each model as |asset|}}
-        {{asset-preview asset=asset class="col-md-4 col-lg-3 col-xl-2 mb-4"}}
+        {{asset-preview asset=asset class="col-md-4 col-lg-4 col-xl-3 mb-4"}}
       {{/each}}
     </div>
   </div>

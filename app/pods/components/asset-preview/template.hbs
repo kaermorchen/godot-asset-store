@@ -2,13 +2,13 @@
 
 <div class="asset-preview-info">
   <div class="row no-gutters mb-1">
-    <div class="col"><small class="text-muted">{{asset.author}}</small></div>
+    <div class="col text-ellipsis"><small class="text-muted ">{{asset.author}}</small></div>
     <div class="col-auto d-flex align-items-center">
       {{!-- <small class="d-inline-flex align-items-center text-warning mr-1">{{mdi-icon "star" size=16 class="mr-1"}} {{asset.rating}}</small> --}}
       <small class="d-inline-flex align-items-center text-muted"><img src="/assets/godot.svg" alt="Godot" height="14" class="mr-1"> {{asset.godotVersion}}</small>
     </div>
   </div>
 
-  <h3>{{link-to asset.title "main.assets.asset" asset.id title=asset.title}}</h3>
+  <h3 class="text-ellipsis">{{link-to asset.title "main.assets.asset" asset.id title=asset.title}}</h3>
 </div>
 

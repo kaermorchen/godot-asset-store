@@ -108,3 +108,9 @@ html, body {
 textarea {
   min-height: 140px;
 }
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
